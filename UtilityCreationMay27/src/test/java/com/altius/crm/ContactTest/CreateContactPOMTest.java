@@ -145,10 +145,8 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 			CreatingNewOrganizationPage cop=new CreatingNewOrganizationPage(driver);
 			cop.createOrg(orgname);
 			
-			String tableorgname= driver.findElement(By.id("dtlview_Organization Name")).getText();
-			if(tableorgname.equals(orgname))
-				System.out.println(orgname + " org is created successfully");
-
+			
+			
 	String excellastname=excelutil.getDataFromExcelFile("contact", 7, 2);
 	String lastname=excellastname+jutil.getRandomeNumber();
 
@@ -170,6 +168,7 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 	cnp.createContact(lastname,orgname);
 	ContactInfoPage cip=new ContactInfoPage(driver);
 	String contactheader=cip.getHeadertxt().getText();
+	String tableorgname= cip.getTableOrgnametxt().getText();
 
 
 	if(contactheader.contains(lastname))
@@ -184,7 +183,7 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 
 	}
 	String tablelastname=cip.getTablelastnametxt().getText();
-	if((tablelastname.trim()).equals(lastname))
+	if((tablelastname.trim()).equals(lastname) && (tableorgname.equals(orgname)))
 	{
 		System.out.println(lastname + "  is created successfully with org "+orgname);
 		System.out.println("createContactWithOrgTest PASSED");

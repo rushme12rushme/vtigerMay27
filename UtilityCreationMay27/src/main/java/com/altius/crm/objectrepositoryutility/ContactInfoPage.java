@@ -12,6 +12,12 @@ public class ContactInfoPage {
 	@FindBy(id="mouseArea_Last Name")
 	private WebElement tablelastnametxt;
 	
+	@FindBy(id="mouseArea_Organization Name")
+	private WebElement tableorgnametxt;
+	
+	public WebElement getTableOrgnametxt() {
+		return tableorgnametxt;
+	}
 	public WebDriver getDriver() {
 		return driver;
 	}
