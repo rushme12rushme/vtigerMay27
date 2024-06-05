@@ -6,10 +6,8 @@
       <class name="com.altius.crm.ContactTest.CreateContactPOMTest">
         <methods>
           <include name="closeDbConnection"/>
-          <include name="createContactWithSupportDateTest"/>
           <include name="logout"/>
           <include name="closeBrowser"/>
-          <include name="createContactTest"/>
           <include name="createContactWithOrgTest"/>
           <include name="login"/>
           <include name="openBrowser"/>

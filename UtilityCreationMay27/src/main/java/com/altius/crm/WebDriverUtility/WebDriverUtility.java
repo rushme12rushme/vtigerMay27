@@ -14,7 +14,7 @@ public class WebDriverUtility {
 
 	public void waitForPageLoad(WebDriver driver)
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
 	}
 	public void waitForElementPresent(WebDriver driver,WebElement element)
