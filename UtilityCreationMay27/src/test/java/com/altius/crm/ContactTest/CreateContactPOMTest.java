@@ -20,6 +20,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -73,10 +75,10 @@ public class CreateContactPOMTest extends BaseClass{
 		}
 		String tablelastname= driver.findElement(By.id("mouseArea_Last Name")).getText();
 		boolean res=tablelastname.contains(lastname);
-		System.out.println(res+"actual table name and lastname");
 		SoftAssert sa=new SoftAssert();
 		sa.assertEquals(res, true);
 		UtilityClassObject.getTest().log(Status.PASS, "contact created");
+		System.out.println("Contact Name Created Successfully");
 
 		sa.assertAll();
 		
@@ -145,12 +147,18 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 			CreatingNewOrganizationPage cop=new CreatingNewOrganizationPage(driver);
 			cop.createOrg(orgname);
 			
-			
+			String tableorgname= driver.findElement(By.id("dtlview_Organization Name")).getText();
+			if(tableorgname.equals(orgname)) {
+				System.out.println(orgname + "  is created successfully");
+				System.out.println("CreateOrgTest PASSED");
+			}
 			
 	String excellastname=excelutil.getDataFromExcelFile("contact", 7, 2);
 	String lastname=excellastname+jutil.getRandomeNumber();
 
-	
+	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+	wait.until(ExpectedConditions.visibilityOf(hp.getContactLink()));
+	System.out.println(hp.getContactLink().getText());
 	hp.getContactLink().click();
 	ContactsPage cp=new ContactsPage(driver);
 	cp.getCreateContactbtn().click();
@@ -168,7 +176,7 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 	cnp.createContact(lastname,orgname);
 	ContactInfoPage cip=new ContactInfoPage(driver);
 	String contactheader=cip.getHeadertxt().getText();
-	String tableorgname= cip.getTableOrgnametxt().getText();
+	tableorgname= cip.getTableOrgnametxt().getText();
 
 
 	if(contactheader.contains(lastname))
