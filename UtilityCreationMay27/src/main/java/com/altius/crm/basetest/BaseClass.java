@@ -27,7 +27,6 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import lombok.experimental.UtilityClass;
 /**
  * Baseclass containing all reusable methods like open browser,Login
  * logout and Close Broser
@@ -52,7 +51,8 @@ public class BaseClass {
 	public void openBrowser() throws IOException {
 		System.out.println("==Open Browser==");
 		
-		String browser = flutil.getDataFromPropertyFile("browser");
+		//String browser = flutil.getDataFromPropertyFile("browser");
+		String browser=System.getProperty("browser",flutil.getDataFromPropertyFile("browser"));
 		// String browser=BROWSER;
 		if (browser.equals("firefox")) {
 			driver = new FirefoxDriver();
@@ -71,10 +71,10 @@ public class BaseClass {
 	public void login() throws IOException {
 		System.out.println("---Login---");
 		LoginPage lp = new LoginPage(driver);
-		String url = flutil.getDataFromPropertyFile("url");
+		String url = System.getProperty("url",flutil.getDataFromPropertyFile("url"));
 
-		String username = flutil.getDataFromPropertyFile("username");
-		String password = flutil.getDataFromPropertyFile("password");
+		String username = System.getProperty("username",flutil.getDataFromPropertyFile("username"));
+		String password = System.getProperty("password",flutil.getDataFromPropertyFile("password"));
 
 		lp.loginToApp(url, username, password);
 
