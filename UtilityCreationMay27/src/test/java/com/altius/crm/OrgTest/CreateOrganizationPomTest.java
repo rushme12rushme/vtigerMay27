@@ -116,7 +116,7 @@ public class CreateOrganizationPomTest extends BaseClass {
 		if(tableorgname.equals(orgname))
 		{
 			System.out.println(orgname + " org is created successfully with phone number "+phone);
-			System.out.println("CreateOrg with Ohone Number PASSED");
+			System.out.println("CreateOrg with Phone Number PASSED");
 		}
 			else
 			System.out.println(orgname + " org creation failed");
