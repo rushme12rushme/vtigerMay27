@@ -132,6 +132,7 @@ public class CreateContactPOMTest extends BaseClass{
 @Test(groups="regressiontest")
 public void createContactWithOrgTest() throws EncryptedDocumentException, IOException
 {
+	System.out.println("CreateContactWith org started");
 
 	UtilityClassObject.getTest().log(Status.PASS, "CreateContactWith org started");
 			HomePage hp=new HomePage(driver);
@@ -148,10 +149,16 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 			cop.createOrg(orgname);
 			
 			String tableorgname= driver.findElement(By.id("dtlview_Organization Name")).getText();
+			System.out.println("Org name from org info page for contact"+tableorgname);
+			System.out.println("Org name from org excel for contact"+orgname);
+
 			if(tableorgname.equals(orgname)) {
 				System.out.println(orgname + "  is created successfully");
-				System.out.println("CreateOrgTest PASSED");
+				System.out.println("CreateOrgTest in contactPASSED");
 			}
+			else
+				System.out.println("CreateOrgTest in contact FAILED");
+
 			
 	String excellastname=excelutil.getDataFromExcelFile("contact", 7, 2);
 	String lastname=excellastname+jutil.getRandomeNumber();
@@ -171,6 +178,7 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 	driver.findElement(By.linkText(orgname)).click();
 	webutil.switchToTabWithUrl(driver, "module=Contacts");
 	
+	System.out.println("Orgname for contact is"+orgname);
 
 	
 	cnp.createContact(lastname,orgname);
@@ -196,6 +204,10 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 		System.out.println(lastname + "  is created successfully with org "+orgname);
 		System.out.println("createContactWithOrgTest PASSED");
 	}
+	else
+		System.out.println("createContactWithOrgTest FAILED");
+	System.out.println(orgname+"and"+lastname);
+
 }
 
 

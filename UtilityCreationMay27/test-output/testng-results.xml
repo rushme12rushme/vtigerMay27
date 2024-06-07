@@ -2,39 +2,39 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-05T15:15:23 IST" name="Default suite" finished-at="2024-06-05T15:16:04 IST" duration-ms="41439">
+  <suite started-at="2024-06-07T12:41:14 IST" name="Default suite" finished-at="2024-06-07T12:41:44 IST" duration-ms="29681">
     <groups>
       <group name="regressiontest">
-        <method signature="CreateContactPOMTest.createContactWithOrgTest()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" name="createContactWithOrgTest" class="com.altius.crm.ContactTest.CreateContactPOMTest"/>
+        <method signature="CreateContactPOMTest.createContactWithOrgTest()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" name="createContactWithOrgTest" class="com.altius.crm.ContactTest.CreateContactPOMTest"/>
       </group> <!-- regressiontest -->
     </groups>
-    <test started-at="2024-06-05T15:15:23 IST" name="Default test" finished-at="2024-06-05T15:16:04 IST" duration-ms="41439">
+    <test started-at="2024-06-07T12:41:14 IST" name="Default test" finished-at="2024-06-07T12:41:44 IST" duration-ms="29681">
       <class name="com.altius.crm.ContactTest.CreateContactPOMTest">
-        <test-method is-config="true" signature="createDBconn()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" started-at="2024-06-05T15:15:22 IST" name="createDBconn" finished-at="2024-06-05T15:15:23 IST" duration-ms="700" status="PASS">
+        <test-method is-config="true" signature="createDBconn()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" started-at="2024-06-07T12:41:14 IST" name="createDBconn" finished-at="2024-06-07T12:41:14 IST" duration-ms="362" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDBconn -->
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" started-at="2024-06-05T15:15:23 IST" name="openBrowser" finished-at="2024-06-05T15:15:28 IST" duration-ms="4913" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" started-at="2024-06-07T12:41:14 IST" name="openBrowser" finished-at="2024-06-07T12:41:17 IST" duration-ms="2989" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" started-at="2024-06-05T15:15:28 IST" name="login" finished-at="2024-06-05T15:15:33 IST" duration-ms="5133" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" started-at="2024-06-07T12:41:17 IST" name="login" finished-at="2024-06-07T12:41:21 IST" duration-ms="3612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createContactWithOrgTest()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" started-at="2024-06-05T15:15:33 IST" name="createContactWithOrgTest" finished-at="2024-06-05T15:16:02 IST" duration-ms="28897" status="PASS">
+        <test-method signature="createContactWithOrgTest()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" started-at="2024-06-07T12:41:21 IST" name="createContactWithOrgTest" finished-at="2024-06-07T12:41:42 IST" duration-ms="21156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createContactWithOrgTest -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" started-at="2024-06-05T15:16:02 IST" name="logout" finished-at="2024-06-05T15:16:04 IST" duration-ms="2029" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" started-at="2024-06-07T12:41:42 IST" name="logout" finished-at="2024-06-07T12:41:43 IST" duration-ms="1557" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" started-at="2024-06-05T15:16:04 IST" name="closeBrowser" finished-at="2024-06-05T15:16:04 IST" duration-ms="417" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" started-at="2024-06-07T12:41:43 IST" name="closeBrowser" finished-at="2024-06-07T12:41:44 IST" duration-ms="307" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="closeDbConnection()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@31304f14]" started-at="2024-06-05T15:16:04 IST" name="closeDbConnection" finished-at="2024-06-05T15:16:04 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeDbConnection()[pri:0, instance:com.altius.crm.ContactTest.CreateContactPOMTest@385c9627]" started-at="2024-06-07T12:41:44 IST" name="closeDbConnection" finished-at="2024-06-07T12:41:44 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDbConnection -->
