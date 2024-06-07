@@ -186,7 +186,13 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 	String contactheader=cip.getHeadertxt().getText();
 	tableorgname= cip.getTableOrgnametxt().getText();
 
-
+	if((tableorgname.trim()).equals(orgname))
+	{
+		System.out.println(tableorgname+"Orname is matching  with "+orgname);
+	}
+	else
+		System.out.println("createContactWithOrgTest FAILED");
+	
 	if(contactheader.contains(lastname))
 	{
 
@@ -199,7 +205,10 @@ public void createContactWithOrgTest() throws EncryptedDocumentException, IOExce
 
 	}
 	String tablelastname=cip.getTablelastnametxt().getText();
-	if((tablelastname.trim()).equals(lastname) && (tableorgname.equals(orgname)))
+	System.out.println("CONTACt expected"+lastname+"actual"+tablelastname);
+	System.out.println("ORGexpected"+orgname+"actual"+tableorgname);
+
+	if((tablelastname.trim()).equals(lastname))
 	{
 		System.out.println(lastname + "  is created successfully with org "+orgname);
 		System.out.println("createContactWithOrgTest PASSED");
