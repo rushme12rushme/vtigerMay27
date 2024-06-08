@@ -89,8 +89,9 @@ public class ListenerImplementation extends BaseClass implements ITestListener,I
 		String date = new Date().toString();
 
 		String fileextn = date.replace(" ", "").replace(":", "_");
+	
 		test.addScreenCaptureFromBase64String(src,result.getMethod().getMethodName()+"_"+fileextn);
-test.log(Status.INFO,"TestCase" +result.getMethod().getMethodName() +"Failed");
+		test.log(Status.INFO,"TestCase" +result.getMethod().getMethodName() +"Failed");
 	}
 
 	@Override

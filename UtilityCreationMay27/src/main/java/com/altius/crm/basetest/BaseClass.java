@@ -29,7 +29,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 /**
  * Baseclass containing all reusable methods like open browser,Login
- * logout and Close Broser
+ * logout and Close Browser
  */
 public class BaseClass {
 	public  WebDriver driver=null;
