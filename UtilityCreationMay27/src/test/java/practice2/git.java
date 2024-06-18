@@ -1,7 +1,11 @@
 package practice2;
 
+import org.junit.Test;
+
 public class git {
-	public static void main(String[] args) {
+	@Test
+	public void createContacttest() {
 		System.out.println("git practice");
+		System.out.println("please review madam");
 	}
 }
