@@ -39,6 +39,7 @@ public class ListenerImplementation extends BaseClass implements ITestListener,I
 	@Override
 	public void onStart(ISuite suite) {
 		// TODO Auto-generated method stub
+		
 		String extn = new Date().toString().replace(":","_").replace(" ","");
 		spark=new ExtentSparkReporter("./ExtentReport/sampleExtentReport_"+extn+".html");
 		spark.config().setDocumentTitle("CreateContactTestReport");
@@ -49,7 +50,7 @@ public class ListenerImplementation extends BaseClass implements ITestListener,I
 		report.attachReporter(spark);
 		report.setSystemInfo("OS","Windows10");
 		report.setSystemInfo("Browser","Chrome");
-	
+
 			
 	
 				
@@ -65,6 +66,7 @@ public class ListenerImplementation extends BaseClass implements ITestListener,I
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
 		ITestListener.super.onStart(context);
+
 	}
 
 	@Override
@@ -82,7 +84,7 @@ public class ListenerImplementation extends BaseClass implements ITestListener,I
 	@Override
 	public void onTestFailure(ITestResult result) {
 		
-
+System.out.println("OntestFailure");
 		TakesScreenshot ts=(TakesScreenshot)BaseClass.edriver;
 		 String src = ts.getScreenshotAs(OutputType.BASE64);
 		
@@ -97,8 +99,19 @@ public class ListenerImplementation extends BaseClass implements ITestListener,I
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		ITestListener.super.onTestSkipped(result);
+		//ITestListener.super.onTestSkipped(result);
+		System.out.println("OntestFailure");
+		TakesScreenshot ts=(TakesScreenshot)BaseClass.edriver;
+		 String src = ts.getScreenshotAs(OutputType.BASE64);
+		
+		String date = new Date().toString();
+
+		String fileextn = date.replace(" ", "").replace(":", "_");
+	
+		test.addScreenCaptureFromBase64String(src,result.getMethod().getMethodName()+"_"+fileextn);
+		test.log(Status.INFO,"TestCase" +result.getMethod().getMethodName() +"Failed");
 	}
+	
 
 	@Override
 	public void onTestStart(ITestResult result) {

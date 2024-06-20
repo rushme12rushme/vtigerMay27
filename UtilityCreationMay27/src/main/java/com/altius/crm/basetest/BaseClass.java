@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -75,7 +76,6 @@ public class BaseClass {
 
 		String username = System.getProperty("username",flutil.getDataFromPropertyFile("username"));
 		String password = System.getProperty("password",flutil.getDataFromPropertyFile("password"));
-
 		lp.loginToApp(url, username, password);
 
 	}
